@@ -24,7 +24,7 @@ git clone https://github.com/ericausente/nginx-plus-ic.git
 Once the cloning process is complete, type the following command and press Enter. 
 This will change your current working directory to the newly cloned repository.
 ```
-cd nginx-plus-ic
+cd nginx-plus-ic-deploy-in-one-go
 ```
 You should now be in the nginx-plus-ic directory and ready to start working with it. Run the script: 
 ```
