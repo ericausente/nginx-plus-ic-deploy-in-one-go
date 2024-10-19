@@ -48,21 +48,32 @@ In order to get access to the Ingress Controller, A NodePort Service was also cr
 Here are the port bindings: 
 
 ```
-  - port: 80
-    nodePort: 30080
-    targetPort: 80
-    protocol: TCP
-    name: http
-  - port: 8081
-    nodePort: 30081
-    targetPort: 8081
-    protocol: TCP
-    name: health
-  - port: 443
-    nodePort: 30443
-    targetPort: 443
-    protocol: TCP
-    name: https
+# kubectl describe service nginx-ingress -n nginx-ingress
+Name:                     nginx-ingress
+Namespace:                nginx-ingress
+Labels:                   <none>
+Annotations:              <none>
+Selector:                 app=nginx-ingress
+Type:                     NodePort
+IP Family Policy:         SingleStack
+IP Families:              IPv4
+IP:                       10.99.196.106
+IPs:                      10.99.196.106
+Port:                     http  80/TCP
+TargetPort:               80/TCP
+NodePort:                 http  30080/TCP
+Endpoints:                192.168.230.5:80
+Port:                     health  8081/TCP
+TargetPort:               8081/TCP
+NodePort:                 health  30081/TCP
+Endpoints:                192.168.230.5:8081
+Port:                     https  443/TCP
+TargetPort:               443/TCP
+NodePort:                 https  30443/TCP
+Endpoints:                192.168.230.5:443
+Session Affinity:         None
+External Traffic Policy:  Cluster
+Events:                   <none>
 ```
 
 # Test the IC 
